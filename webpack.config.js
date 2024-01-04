@@ -8,7 +8,7 @@ const config = {
         new OpenEditorWebpackPlugin({}),
         new CopyPlugin({
             patterns: [
-                { from: __dirname + '/build/*', to: __dirname + '/dist'}
+                { from: __dirname + '/build/*', to: __dirname + '/dist/[name][ext]'}
             ]
         })
     ],
@@ -16,10 +16,11 @@ const config = {
         path: __dirname + '/dist',
         filename: 'main.js'
     },
+    mode: 'development',
     module: {
         rules: [
             {
-                test: /.js[x]?$/,
+                test: /\.jsx?$/,
                 loader: "babel-loader",
             }
         ]
@@ -30,6 +31,9 @@ const config = {
             directory: __dirname + '/dist',
             publicPath: '/'
         },
+        devMiddleware: {
+            writeToDisk: true,
+        }
     }
 }
 

@@ -1,7 +1,9 @@
 {
-    "extends": "",
     "presets": [
-        "@babel/preset-react",
+        ["@babel/preset-react", {
+            "runtime": "automatic",
+            "development": true
+        }],
         "@babel/preset-env"
     ]
 }

@@ -1,4 +1,4 @@
-import ReactDom from "react-dom"
+import ReactDom from "react-dom/client"
 import App from "./App.jsx"
 
-ReactDom.render(<App />, document.getElementById('app'))
+ReactDom.createRoot(document.getElementById('app')).render(<App />)
